@@ -2,8 +2,10 @@ const express = require("express");
 const router = express.Router();
 
 const { getTopics } = require("./controllers/topicsController");
+const { getArticles } = require("./controllers/articlesController");
 
 router.get("/topics", getTopics);
+router.get("/articles", getArticles);
 
 const app = express();
 app.use(express.json());

@@ -2,7 +2,7 @@ const db = require("../db/connection");
 
 const selectTopics = () => {
   return db
-    .query("SELECT * FROM topics")
+    .query("SELECT slug, description FROM topics")
     .then((result) => {
       return result.rows;
     })
