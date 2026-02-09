@@ -3,10 +3,11 @@ const router = express.Router();
 
 const { getTopics } = require("./controllers/topicsController");
 const { getArticles } = require("./controllers/articlesController");
+const { getUsers } = require("./controllers/usersController");
 
 router.get("/topics", getTopics);
 router.get("/articles", getArticles);
-
+router.get("/users", getUsers);
 const app = express();
 app.use(express.json());
 app.use("/api", router);

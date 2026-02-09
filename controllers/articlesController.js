@@ -10,8 +10,4 @@ const getArticles = (req, res, next) => {
     });
 };
 
-// const getTopics = (req, res) => {
-//   res.send("Wiki home page");
-// };
-
 module.exports = { getArticles };
