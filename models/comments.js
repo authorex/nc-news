@@ -28,4 +28,21 @@ const insertComment = (articleId, username, body) => {
     });
 };
 
-module.exports = { selectCommentsByArticleId, insertComment };
+const deleteCommentById = (commentId) => {
+  return db
+    .query("DELETE FROM comments WHERE comment_id = $1 RETURNING *", [
+      commentId,
+    ])
+    .then((result) => {
+      return result.rows[0];
+    })
+    .catch((err) => {
+      return err;
+    });
+};
+
+module.exports = {
+  selectCommentsByArticleId,
+  insertComment,
+  deleteCommentById,
+};

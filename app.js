@@ -11,6 +11,7 @@ const { getUsers } = require("./controllers/usersController");
 const {
   getCommentsByArticleId,
   createComment,
+  deleteComment,
 } = require("./controllers/commentsController");
 
 router.get("/topics", getTopics);
@@ -20,6 +21,7 @@ router.patch("/articles/:article_id", updateArticle);
 router.get("/users", getUsers);
 router.get("/articles/:article_id/comments", getCommentsByArticleId);
 router.post("/articles/:article_id/comments", createComment);
+router.delete("/comments/:comment_id", deleteComment);
 
 const app = express();
 app.use(express.json());
