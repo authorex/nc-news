@@ -7,13 +7,17 @@ const {
   getArticleById,
 } = require("./controllers/articlesController");
 const { getUsers } = require("./controllers/usersController");
-const { getCommentsByArticleId } = require("./controllers/commentsController");
+const {
+  getCommentsByArticleId,
+  createComment,
+} = require("./controllers/commentsController");
 
 router.get("/topics", getTopics);
 router.get("/articles", getArticles);
 router.get("/articles/:article_id", getArticleById);
 router.get("/users", getUsers);
 router.get("/articles/:article_id/comments", getCommentsByArticleId);
+router.post("/articles/:article_id/comments", createComment);
 
 const app = express();
 app.use(express.json());
