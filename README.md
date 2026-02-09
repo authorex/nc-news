@@ -1,3 +1,5 @@
 # NC News Seeding
 
-- Instructions for this sprint can be found at https://l2c.northcoders.com/courses/be/seeding-nc-news
+- Create two .env files for your databases:
+  .env.test (for the test database).
+  .env.development (for the development database).
