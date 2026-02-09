@@ -5,6 +5,7 @@ const { getTopics } = require("./controllers/topicsController");
 const {
   getArticles,
   getArticleById,
+  updateArticle,
 } = require("./controllers/articlesController");
 const { getUsers } = require("./controllers/usersController");
 const {
@@ -15,6 +16,7 @@ const {
 router.get("/topics", getTopics);
 router.get("/articles", getArticles);
 router.get("/articles/:article_id", getArticleById);
+router.patch("/articles/:article_id", updateArticle);
 router.get("/users", getUsers);
 router.get("/articles/:article_id/comments", getCommentsByArticleId);
 router.post("/articles/:article_id/comments", createComment);

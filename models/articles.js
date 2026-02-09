@@ -24,4 +24,18 @@ const selectArticleById = (articleId) => {
     });
 };
 
-module.exports = { selectArticles, selectArticleById };
+const updateArticleById = (articleId, incVotes) => {
+  return db
+    .query(
+      "UPDATE articles SET votes = votes + $1 WHERE article_id = $2 RETURNING *",
+      [incVotes, articleId],
+    )
+    .then((result) => {
+      return result.rows[0];
+    })
+    .catch((err) => {
+      return err;
+    });
+};
+
+module.exports = { selectArticles, selectArticleById, updateArticleById };
