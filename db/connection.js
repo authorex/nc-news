@@ -13,6 +13,8 @@ if (!process.env.PGDATABASE && !process.env.DATABASE_URL) {
 const config = {};
 
 if (ENV === "production") {
+  console.log("LOG", ENV);
+  console.log("Database url", process.env.DATABASE_URL);
   config.connectionString = process.env.DATABASE_URL;
   config.max = 2;
 }

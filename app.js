@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const cors = require("cors");
 const { getTopics } = require("./controllers/topicsController");
 const {
   getArticles,
@@ -24,6 +24,8 @@ router.post("/articles/:article_id/comments", createComment);
 router.delete("/comments/:comment_id", deleteComment);
 
 const app = express();
+
+app.use(cors());
 app.use(express.json());
 app.use("/api", router);
 
