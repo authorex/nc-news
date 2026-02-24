@@ -1,3 +1,3 @@
-# NC News Seeding
+# NC News Back-end
 
-A brand new news app
+A brand new news app (Back-end)
